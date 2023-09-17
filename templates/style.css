@@ -24,11 +24,33 @@ body {
 
 .livro{
     color: #fff;
+    font-style: italic;
     text-align: left;
     align-items: center;
     max-width: 100%;
     margin: auto ;
-    font-family: 'Dancing Script', cursive, sans-serif;
+    font-family: 'Dancing Script';
+}
+
+.livro_final{
+    color: #fff;
+    font-style: italic;
+    text-align: left;
+    align-items: center;
+    max-width: 100%;
+    margin: auto;
+}
+
+.livro_ultimo{
+    color: #fff;
+    text-align: center;
+    font-family: 'Dancing Script';
+}
+
+.love{
+    color: #fff;
+    text-align: center;
+    font-family: 'Tangerine';
 }
 
 h1 {
