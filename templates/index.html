@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" href="static/images/coracao.ico" type="image/x-icon">
+    <link rel="icon" href="templates/static/images/coracao.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>A Aventura de Jess</title>
-    <script src="static/java-script/script.js"></script>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,25 +15,34 @@
         <p>A essa grande aventura que te acompanhará em sua jornada até o seu destino</p>
         <img src="static/images/primeira.png" alt="Anel de Noivado">
         <br><br>
-        <a id="meuBotao" disable href="introducao.html" class="btn">Pronta para começar?</a>
-        <script src="static/java-script/script.js">
+        <button class="btn" id="meuBotao" disabled>Pronta para Começar?</button>
+    
+        <script>
             // Função para verificar e habilitar o botão com base na data e hora
             function verificarDataEHora() {
                 const dataAlvo = new Date('2023-01-01T00:00:00'); // Defina a data e hora alvo
                 const agora = new Date();
-    
-                if (agora >= dataAlvo) {
-                    document.getElementById('meuBotao').removeAttribute('disabled');
-                    document.getElementById('meuBotao').textContent = 'Botão Ativado';
-                } else {
-                    document.getElementById('meuBotao').setAttribute('disabled', true);
-                    document.getElementById('meuBotao').textContent = 'Botão Desativado';
+                const botoes = document.getElementsByClassName('btn');
+        
+                for (const botao of botoes) {
+                    if (agora >= dataAlvo) {
+                        botao.removeAttribute('disabled');
+                        botao.textContent = 'Pronta para Começar?';
+        
+                        // Adicione um evento de clique ao botão que redireciona para a página "introducao.html"
+                        botao.addEventListener('click', function() {
+                            window.location.href="introducao.html"
+                        });
+                    } else {
+                        botao.setAttribute('disabled', true);
+                        botao.textContent = '06/10';
+                    }
                 }
             }
-    
+        
             // Chame a função para verificar a data e hora quando a página carregar
             verificarDataEHora();
-    
+        
             // Atualize a verificação a cada minuto (opcional)
             setInterval(verificarDataEHora, 60000); // A cada minuto
         </script>
