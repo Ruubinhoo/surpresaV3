@@ -1,6 +1,6 @@
 // Função para verificar e habilitar o botão com base na data e hora
 function verificarDataEHora() {
-    const dataAlvo = new Date('2023-10-06T00:00:00'); // Defina a data e hora alvo
+    const dataAlvo = new Date('2023-01-01T00:00:00'); // Defina a data e hora alvo
     const agora = new Date();
     const botoes = document.getElementsByClassName('btn');
 
