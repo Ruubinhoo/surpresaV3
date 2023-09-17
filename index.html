@@ -26,7 +26,7 @@
                 for (const botao of botoes) {
                     if (agora >= dataAlvo) {
                         botao.removeAttribute('disabled');
-                        botao.textContent = 'Botão Ativado';
+                        botao.textContent = 'Pronta para Começar?';
         
                         // Adicione um evento de clique ao botão que redireciona para a página "introducao.html"
                         botao.addEventListener('click', function() {
@@ -34,7 +34,7 @@
                         });
                     } else {
                         botao.setAttribute('disabled', true);
-                        botao.textContent = 'Botão Desativado';
+                        botao.textContent = '06/10';
                     }
                 }
             }
