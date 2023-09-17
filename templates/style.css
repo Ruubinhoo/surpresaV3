@@ -24,11 +24,11 @@ body {
 
 .livro{
     color: #fff;
-    font-style: italic;
     text-align: left;
     align-items: center;
     max-width: 100%;
     margin: auto ;
+    font-family: 'Dancing Script', cursive, sans-serif;
 }
 
 h1 {

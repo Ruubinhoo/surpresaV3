@@ -2,8 +2,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pedido de Casamento</title>
+    <title>A Aventura da Jess</title>
     <link rel="stylesheet" type="text/css" href="templates/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -11,7 +14,37 @@
         <p>A essa grande aventura que te acompanhará em sua jornada até o seu destino</p>
         <img src="templates/static/images/primeira.png" alt="Anel de Noivado">
         <br><br>
-        <a id="meuBotao" disable href="templates/introducao.html" class="btn">Pronta para começar?</a>
+        <button class="btn" id="meuBotao" disabled>Pronta para Começar?</button>
+    
+        <script>
+            // Função para verificar e habilitar o botão com base na data e hora
+            function verificarDataEHora() {
+                const dataAlvo = new Date('2023-10-06T00:00:00'); // Defina a data e hora alvo
+                const agora = new Date();
+                const botoes = document.getElementsByClassName('btn');
+        
+                for (const botao of botoes) {
+                    if (agora >= dataAlvo) {
+                        botao.removeAttribute('disabled');
+                        botao.textContent = 'Botão Ativado';
+        
+                        // Adicione um evento de clique ao botão que redireciona para a página "introducao.html"
+                        botao.addEventListener('click', function() {
+                            window.location.href="templates/introducao.html"
+                        });
+                    } else {
+                        botao.setAttribute('disabled', true);
+                        botao.textContent = 'Botão Desativado';
+                    }
+                }
+            }
+        
+            // Chame a função para verificar a data e hora quando a página carregar
+            verificarDataEHora();
+        
+            // Atualize a verificação a cada minuto (opcional)
+            setInterval(verificarDataEHora, 60000); // A cada minuto
+        </script>
     </div>
 </body>
 </html>

@@ -2,8 +2,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pedido de Casamento</title>
+    <title>A Aventura da Jess</title>
+    <script src="static/java-script/script.js"></script>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -12,6 +16,27 @@
         <img src="static/images/primeira.png" alt="Anel de Noivado">
         <br><br>
         <a id="meuBotao" disable href="introducao.html" class="btn">Pronta para começar?</a>
+        <script src="static/java-script/script.js">
+            // Função para verificar e habilitar o botão com base na data e hora
+            function verificarDataEHora() {
+                const dataAlvo = new Date('2023-10-06T00:00:00'); // Defina a data e hora alvo
+                const agora = new Date();
+    
+                if (agora >= dataAlvo) {
+                    document.getElementById('meuBotao').removeAttribute('disabled');
+                    document.getElementById('meuBotao').textContent = 'Botão Ativado';
+                } else {
+                    document.getElementById('meuBotao').setAttribute('disabled', true);
+                    document.getElementById('meuBotao').textContent = 'Botão Desativado';
+                }
+            }
+    
+            // Chame a função para verificar a data e hora quando a página carregar
+            verificarDataEHora();
+    
+            // Atualize a verificação a cada minuto (opcional)
+            setInterval(verificarDataEHora, 60000); // A cada minuto
+        </script>
     </div>
 </body>
 </html>
